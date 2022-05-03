@@ -1,0 +1,34 @@
+<ion-list radio-group>
+  <ul>
+    <li *ngFor="let item of items">
+      <ion-item no-lines>
+        <ion-radio
+          [value]="item.value"
+          [id]="item.id"
+          (ionSelect)="onInputChange(item.value)"
+        ></ion-radio>
+        <ion-label dir="auto">{{ item.response }}</ion-label>
+      </ion-item>
+    </li>
+    <li>
+      <ion-item> two</ion-item>
+    </li>
+  </ul>
+</ion-list>
+<ion-item>
+  <ion-label stacked>Height:</ion-label>
+  <ion-input type="text" [(ngModel)]="height" readonly></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label stacked>Blood Pressure:</ion-label>
+  <ion-input type="text" [(ngModel)]="bloodPressure" readonly></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label stacked>Weight:</ion-label>
+  <ion-input type="text" [(ngModel)]="weight" readonly></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label stacked>Body Temperature:</ion-label>
+  <ion-input type="text" [(ngModel)]="bodyTemperature" readonly></ion-input>
+</ion-item>
+<button ion-button full (click)="loadData()">Export</button>
